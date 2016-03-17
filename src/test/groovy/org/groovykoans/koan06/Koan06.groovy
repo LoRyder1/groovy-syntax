@@ -35,10 +35,10 @@ class Koan06 extends GroovyTestCase {
         String groovyResult
         // ------------ START EDITING HERE ----------------------
         groovyResult = new StringBuilder().with {
-            append(/roses are #FF0000\\n/)            
-            append(/violets are #0000FF\\n/)
-            append(/all my base\\n/)
-            append(/are belong to you\\n/)
+            append(/roses are #FF0000\n/)            
+            append(/violets are #0000FF\n/)
+            append(/all my base\n/)
+            append(/are belong to you\n/)
             return it.toString()
         }
 
@@ -83,7 +83,7 @@ class Koan06 extends GroovyTestCase {
         // range objects, store all the prime numbers between 200 and 250 in the target variable
         def primesBetween200And250 = []
         // ------------ START EDITING HERE ----------------------
-        primesBetween200and250 = (200..250).findAll { candidate ->
+        primesBetween200And250 = (200..250).findAll { candidate ->
             (2..<candidate).every { divisor ->
                 candidate % divisor != 0
             }
