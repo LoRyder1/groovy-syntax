@@ -48,8 +48,7 @@ class Koan03 extends GroovyTestCase {
         def failed = true
         shouldFail (ReadOnlyPropertyException) {
             // ------------ START EDITING HERE ----------------------
-
-
+            person.ssn = "123"
             // ------------ STOP EDITING HERE  ----------------------
             failed = false
         }
