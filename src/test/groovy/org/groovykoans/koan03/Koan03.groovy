@@ -70,8 +70,7 @@ class Koan03 extends GroovyTestCase {
         // Create a SimpleGroovyBean using named arguments, to represent a transaction with -30 as its data.
         def transaction
         // ------------ START EDITING HERE ----------------------
-
-
+        transaction = SimpleGroovyBean(title: "Transaction", data: -30)
         // ------------ STOP EDITING HERE  ----------------------
 
         assert transaction.data == -30
