@@ -72,7 +72,7 @@ class Koan01 extends GroovyTestCase {
         // Concatenate the two values of 'right' and 'left' into result to proceed using Groovy syntax
         def result
         // ------------ START EDITING HERE ----------------------
-
+        result = map['right'] + map['left']
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -94,7 +94,7 @@ class Koan01 extends GroovyTestCase {
         // Add the missing item to the Groovy list. Pay attention to the order of the items.
         // Hint: you can use either Java's add(int, String) or Groovy's plus() method.
         // ------------ START EDITING HERE ----------------------
-
+        groovyList = groovyList.plus(1, 'Queen')
 
         // ------------ STOP EDITING HERE  ----------------------
 
