@@ -78,7 +78,6 @@ class Koan05 extends GroovyTestCase {
                 rangeResult << value
             }
         }
-
         // ------------ STOP EDITING HERE  ----------------------
         assert rangeResult == ['a', 'c', 'e', 'g', 'i', 'k', 'm', 'o', 'q', 's', 'u', 'w', 'y']
     }
