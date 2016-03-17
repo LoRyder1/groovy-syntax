@@ -126,8 +126,11 @@ class Koan04 extends GroovyTestCase {
         def prefix = 'src/test/groovy/org/groovykoans/koan04/'
         // ------------ START EDITING HERE ----------------------
         def file = new File("$prefix/exercise.txt")
-        file.filterLine(filteredResult) { String line ->
-            !line.startsWith('#')
+        //file.filterLine(filteredResult) { String line ->
+          //  !line.startsWith('#')
+        //}
+        file.filterLine(filteredResult) { 
+            !it.startsWith('#')
         }
 
         // ------------ STOP EDITING HERE  ----------------------
@@ -141,22 +144,27 @@ class Koan04 extends GroovyTestCase {
         // Depending on personal preference, you can choose to omit parenthesis from method calls if there is at least
         // one parameter and no ambiguity. For example:
 
+        //def count = "That ain't no woman! It's a man, man!".count('man')
         def count = "That ain't no woman! It's a man, man!".count 'man'
 
         // Can you guess what count() does? If not, look it up in
         // http://docs.groovy-lang.org/latest/html/groovy-jdk/java/lang/String.html
         def expectedCount
         // ------------ START EDITING HERE ----------------------
-        expectedCount = 2
+        expectedCount = 3
         // ------------ STOP EDITING HERE  ----------------------
 
         assert count == expectedCount
 
         // Admittedly, that past example doesn't make the code any clearer.
         // However, when we have methods with a closure as a parameter, it removes a lot of the noise:
-        def mysteryList = ['Groovy', 'Baby', 'Yeah'].findAll {  // no parenthesis
-            it.contains('a')
-        }
+        //def mysteryList = ['Groovy', 'Baby', 'Yeah'].findAll {  // no parenthesis
+        //    it.contains('a')
+        //}
+
+        def mysteryList = ['Groovy', 'Baby', 'Yeah'].findAll({ String word -> 
+            word.contains('a')
+        })
 
         // What will the value of mysteryList be?
         def expectedMysteryList
