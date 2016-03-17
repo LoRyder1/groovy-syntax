@@ -32,6 +32,11 @@ class Koan09 extends GroovyTestCase {
         def expando = new Expando()
         // ------------ START EDITING HERE ----------------------
 
+        expando.firstName = 'Lovinder'
+        expand.sayHello = { ->
+            "Hello from ${firstName}"
+        }
+
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -49,6 +54,8 @@ class Koan09 extends GroovyTestCase {
         def proxy
         // ------------ START EDITING HERE ----------------------
 
+        proxy = ProxyMetaClass.getInstance(SensitiveService)
+        proxy.interceptor = new NukeInterceptor()
 
         // ------------ STOP EDITING HERE  ----------------------
 
@@ -69,7 +76,7 @@ class Koan09 extends GroovyTestCase {
         // In Java, we only have the 'this' keyword. It returns the current instance. Groovy does exactly the same.
         def expectedThisClassName
         // ------------ START EDITING HERE ----------------------
-
+        expectedThisClassName = 'org.groovykoans.koan09.Koan09'
 
         // ------------ STOP EDITING HERE  ----------------------
         assert this.class.name == expectedThisClassName
@@ -98,7 +105,8 @@ class Koan09 extends GroovyTestCase {
         // Can you figure out what the values for weightOnEarth and weightOnMoon are?
         def expectedWeightOnMoon, expectedWeightOnEarth
         // ------------ START EDITING HERE ----------------------
-
+        expectedWeightOnMoon = 1.655
+        expectedWeightOnEarth = 10
 
         // ------------ STOP EDITING HERE  ----------------------
         assert weightOnEarth == expectedWeightOnEarth
@@ -109,6 +117,7 @@ class Koan09 extends GroovyTestCase {
         // Create a fake environment using the technique in the link to create a gravity of 6
         // ------------ START EDITING HERE ----------------------
 
+        calculateWeight.delegate = [gravity: 6]
 
         // ------------ STOP EDITING HERE  ----------------------
         def weightOnFakePlanet = calculateWeight(10)
@@ -163,6 +172,13 @@ class Koan09 extends GroovyTestCase {
 
         // ------------ START EDITING HERE ----------------------
 
+        Integer.metaClass.fizzBuzz = {
+            String result = ''
+            if (delegate % 3 == 0) result += 'Fizz'
+            if (delegate % 5 == 0) result += 'Buzz'
+            if (!result) result = delegate.toString()
+            result
+        }
 
         // ------------ STOP EDITING HERE  ----------------------
         def fizzBuzzes = (1..15).collect { it.fizzBuzz() }
