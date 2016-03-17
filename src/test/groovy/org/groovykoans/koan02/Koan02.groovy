@@ -68,7 +68,6 @@ class Koan02 extends GroovyTestCase {
         // Remove (or change) the offending integer to continue
         // ------------ START EDITING HERE ----------------------
         balance[3] = 4
-
         // ------------ STOP EDITING HERE  ----------------------
 
         // Iterate through the list and AND the boolean values of its members.

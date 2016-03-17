@@ -30,7 +30,8 @@ class Koan03 extends GroovyTestCase {
         def javaFirstName
         def groovyFirstName
         // ------------ START EDITING HERE ----------------------
-
+        javaFirstName = javaPerson.getFirstName();
+        groovyFirstName = groovyPerson.firstName
 
         // ------------ STOP EDITING HERE  ----------------------
 
