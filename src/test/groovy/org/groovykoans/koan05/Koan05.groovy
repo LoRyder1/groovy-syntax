@@ -42,7 +42,9 @@ class Koan05 extends GroovyTestCase {
         def idListResult = []
         // ------------ START EDITING HERE ----------------------
 
-
+        idToNameMap.each { key, value ->
+            idListResult << "$key$value"
+        }
         // ------------ STOP EDITING HERE  ----------------------
         assert idListResult == ['333Matthew', '233Christopher', '133Dominic']
     }
