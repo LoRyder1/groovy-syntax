@@ -57,6 +57,7 @@ class Koan01 extends GroovyTestCase {
         String result
         // ------------ START EDITING HERE ----------------------
 
+        result = "The size of the string '${greeting}' is 26"
 
         // ------------ STOP EDITING HERE  ----------------------
 
